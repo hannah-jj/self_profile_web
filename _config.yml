@@ -1,0 +1,21 @@
+# Site settings
+title: An Unexpected Journey
+header-img: img/home-bg.png
+email: hui1021@yahoo.com
+copyright_name: hannah11361
+description: > # this means to ignore newlines until "baseurl:"
+  A Journey Through Codes
+baseurl: "" # the subpath of your site, e.g. /blog
+twitter_username: 
+github_username:  hannah11361
+learn_profile: hannah11361
+email_username: hui1021@yahoo.com
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+paginate: 5
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+
+gems: [jekyll-paginate, jekyll-feed]

@@ -23,7 +23,19 @@ Another post suggested a "cheap fix" with CSS file: making the padding-bottom fo
 
 CSS File:
 
-![](http://i.imgur.com/sjJOizx.png)
+```
+.row-2 {
+  overflow: hidden;
+}
+.cell-1, .cell-2 {
+  
+  padding: 30px;
+  padding-bottom: 99999px;
+  margin-bottom: -99999px;
+  background: white;
+}
+
+```
 
 Setup in HTML side should include the two siblings in the same <div> with class "row-2", and each sibling's container would have class of "cell-1" and "cell-2" respectively. And it worked!!!
 
@@ -31,7 +43,12 @@ Setup in HTML side should include the two siblings in the same <div> with class 
 
 Now there is still something that was bothering me: the gap between this row and the next row has disappearred!  This time I thought of something quick myself: putting in a placeholder <div> section with no content:
 
-![](http://i.imgur.com/E8NpGXb.png)
+```
+.temp{
+    padding: 0px;
+  margin-bottom: 20px;
+}
+```
 
 And hooray! 
 

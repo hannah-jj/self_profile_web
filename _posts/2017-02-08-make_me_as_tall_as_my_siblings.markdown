@@ -11,7 +11,7 @@ While I was coding-along in the "Adding Responsive Feature" lab, I couldn't help
 
 ![](http://i.imgur.com/UjrjfmS.png)
 
-The two columns (siblings) don't have the same height! I couldn't get pass that, so I fired up google searchign for ways to make the columns the same height!  It turns out that the height issues are very common when the contents of the siblings are not exactly the same.
+The two columns (siblings) don't have the same height! I couldn't get pass that, so I fired up google searching for ways to make the columns the same height!  It turns out that the height issues are very common when the contents of the siblings are not exactly the same.
 
 I found many posts, a lot of suggesting using Javasript to get the height of the tallest sibling and set the others with the same height.  Those solutions are still beyond me since I am still a newbie. So I tried other ones that are easier to understand and doable for me.  One of them suggested using table display:
 
@@ -23,16 +23,7 @@ Another post suggested a "cheap fix" with CSS file: making the padding-bottom fo
 
 CSS File:
 
-.row-2 {
-  overflow: hidden;
-}
-.cell-1, .cell-2 {
-  
-  padding: 30px;
-  padding-bottom: 99999px;
-  margin-bottom: -99999px;
-  background: white;
-}
+![](http://i.imgur.com/sjJOizx.png)
 
 Setup in HTML side should include the two siblings in the same <div> with class "row-2", and each sibling's container would have class of "cell-1" and "cell-2" respectively. And it worked!!!
 
@@ -40,10 +31,7 @@ Setup in HTML side should include the two siblings in the same <div> with class 
 
 Now there is still something that was bothering me: the gap between this row and the next row has disappearred!  This time I thought of something quick myself: putting in a placeholder <div> section with no content:
 
-.temp{
-  padding: 0px;
-  margin-bottom: 20px;
-}
+![](http://i.imgur.com/E8NpGXb.png)
 
 And hooray! 
 

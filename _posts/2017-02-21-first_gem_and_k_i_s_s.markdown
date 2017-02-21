@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "First Gem and K.I.S.S"
-date:   2017-02-21 04:48:09 +0000
+date:   2017-02-20 23:48:10 -0500
 ---
 
 
@@ -21,9 +21,9 @@ Below is the story of how to build a Gem, should you accept the mission to read 
 
 ## **Building a CLI Data Gem in 5 Steps**
 
-1: Decide on a website to scrape information from:  travel the world is on my will-do-list, so I found a website that has basic information on each country conveniently located in one place - [http://www.worldbank.org/en/country]
+1: Decide on a website to scrape information from:  travel the world is on my will-do-list, so I found a website that has basic information on each country conveniently located in one place - [worldbank](http://www.worldbank.org/en/country)
 
-2: Download the files needed to build a gem by typing "bundle gem name_of_gem" in your terminal. Detailed instructions on how to use bundle to build a gem is located here - [https://bundler.io/v1.13/guides/creating_gem]. 
+2: Download the files needed to build a gem by typing "bundle gem name_of_gem" in your terminal. Detailed instructions on how to use bundle to build a gem is located here - [bundler - creating_gem](https://bundler.io/v1.13/guides/creating_gem). 
 
 3: Code away!!! 
 
@@ -36,7 +36,7 @@ spec.executables   << 'countries_of_the_world'
 ```
 This line tells Gem to run the executable file that is named countries_of_the_world located in the bin file when user starts your program. (This step took a lot of googling...... why can't they put that in the instruction... )
 
-5: Test the gem locally & then publish to [https://rubygems.org/] be sure to sign up for an account on the website ahead of time
+5: Test the gem locally & then publish to [rubygems.org](https://rubygems.org/) be sure to sign up for an account on the website ahead of time
 
 ```
 $ rake build
@@ -50,12 +50,12 @@ $ rake release
 
 ============================================================================================================
 
-## Step 3 elaborated:
+# **Step 3 elaborated:**
 
 
 Coding took the most amount of time in the whole project. And the principle I follow is KISS - Keep It Simple Stupid. 
 
-## **Design**
+# Design
 
 **Scraper Class** - scraps information from web pages and return hash or array to the caller
 
@@ -75,7 +75,7 @@ Scrape Class:
 
 Other than scrape_page method has crossed over the boundary of my original design, everything stayed as a simple and stupid (but elegant) black-box.
 
-## **Broken Links**
+# Broken Links
 It turned out that scraping is the easiest part of the coding process.  Dealing with broken links took most of time. And there were a lot of broken links for website with lots of information!!!  I had to google a lot to find out how to find out when a link is broken without me manually clicking over all the links:
 
 ```
@@ -96,10 +96,10 @@ It turned out that scraping is the easiest part of the coding process.  Dealing 
 
 When the response code from the Net::HTTP is anything lower than 200 or higher than 400, it's a broken link. (Damn 404!!!)
 
-## **Celebrate**
+# Celebrate
 Now that you've reached the end of this blog post, feel free to celebrate a little too.  Here is link to my github for your viewing pleasure:
 
-[https://github.com/hannah11361/countries-of-the-world-cli-app]
+[link to github](https://github.com/hannah11361/countries-of-the-world-cli-app)
 
 I noticed that the i/o for music library project used "colorize" gem, so I got obsessed with the colors too. (If you install my gem, you will see the welcome screen blinks!!! That was as easy as typing .blink after any string. Have fun! Get a cake and you can eat it too!
 

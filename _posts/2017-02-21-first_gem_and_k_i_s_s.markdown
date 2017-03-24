@@ -2,10 +2,11 @@
 layout: post
 title:  "First Gem and K.I.S.S"
 date:   2017-02-20 23:48:10 -0500
+excerpt_separator: <!--more-->
 ---
 
 
-2/20/2017 will always have a special place in my life journey going forward, because it is the day that I published my first Gem!!! You can celebrate the occasion with me by typing below into your terminal:
+2/20/2017 will always have a special place in my life journey going forward, because it is the day that I published my first Gem!!! <!--more-->You can celebrate the occasion with me by typing below into your terminal:
 
 ```
 $ gem install countries_of_the_world
@@ -23,9 +24,9 @@ Below is the story of how to build a Gem, should you accept the mission to read 
 
 1: Decide on a website to scrape information from:  travel the world is on my will-do-list, so I found a website that has basic information on each country conveniently located in one place - [worldbank](http://www.worldbank.org/en/country)
 
-2: Download the files needed to build a gem by typing "bundle gem name_of_gem" in your terminal. Detailed instructions on how to use bundle to build a gem is located here - [bundler - creating_gem](https://bundler.io/v1.13/guides/creating_gem). 
+2: Download the files needed to build a gem by typing "bundle gem name_of_gem" in your terminal. Detailed instructions on how to use bundle to build a gem is located here - [bundler - creating_gem](https://bundler.io/v1.13/guides/creating_gem).
 
-3: Code away!!! 
+3: Code away!!!
 
 hours and hours of coding later...
 
@@ -53,7 +54,7 @@ $ rake release
 # **Step 3 elaborated:**
 
 
-Coding took the most amount of time in the whole project. And the principle I follow is KISS - Keep It Simple Stupid. 
+Coding took the most amount of time in the whole project. And the principle I follow is KISS - Keep It Simple Stupid.
 
 # Design
 
@@ -88,7 +89,7 @@ It turned out that scraping is the easiest part of the coding process.  Dealing 
 			doc = Nokogiri::HTML(open(url))
 			[doc.css("li.come-level a.toggle strong").text,
 			doc.css("li.region a.toggle strong").text
-			]	
+			]
 		else
 			[nil,nil]
 		end
@@ -104,6 +105,3 @@ Now that you've reached the end of this blog post, feel free to celebrate a litt
 I noticed that the i/o for music library project used "colorize" gem, so I got obsessed with the colors too. (If you install my gem, you will see the welcome screen blinks!!! That was as easy as typing .blink after any string. Have fun! Get a cake and you can eat it too!
 
 ![](http://i.imgur.com/ClbtwNy.png)
-
-
-

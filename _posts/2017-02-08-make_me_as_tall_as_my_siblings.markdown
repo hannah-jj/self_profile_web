@@ -2,10 +2,11 @@
 layout: post
 title:  "Make Me As Tall as My Siblings!"
 date:   2017-02-08 00:23:16 -0500
+excerpt_separator: <!--more-->
 ---
 
 
-Surfing the web is no longer the same after I have gone through the HTML and CSS portion of the program!  I often resize the browser on desktop computer just to see how/if the pages are responsive to changes. And whenever I browse pages that are not built for optimal view on mobile device, I would think about how it can be done.  It was really amazing to see how CSS can control the styles of a website. 
+Surfing the web is no longer the same after I have gone through the HTML and CSS portion of the program!  <!--more-->I often resize the browser on desktop computer just to see how/if the pages are responsive to changes. And whenever I browse pages that are not built for optimal view on mobile device, I would think about how it can be done.  It was really amazing to see how CSS can control the styles of a website. 
 
 While I was coding-along in the "Adding Responsive Feature" lab, I couldn't help but to notice that the below scene doesn't look right:
 
@@ -28,7 +29,7 @@ CSS File:
   overflow: hidden;
 }
 .cell-1, .cell-2 {
-  
+
   padding: 30px;
   padding-bottom: 99999px;
   margin-bottom: -99999px;
@@ -50,16 +51,10 @@ Now there is still something that was bothering me: the gap between this row and
 }
 ```
 
-And hooray! 
+And hooray!
 
 ![](http://i.imgur.com/0PsqQLX.png)
 
 It was probably a cheap fix for now before I learn more bulletproof way of fixing, but I still feel accomplished nonetheless.
 
 Now, if there is a way to make me as tall as my sibling with a click of button, that'll be fantastic!
-
-
-
-
-
-

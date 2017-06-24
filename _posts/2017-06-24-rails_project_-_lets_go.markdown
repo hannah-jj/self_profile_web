@@ -22,7 +22,7 @@ Those sounded like fairly easy tasks with such limited features, but the models 
 
 Once the main features are decided, I drew the views and layouts of each pages.  The main actions are:
 - an event's show page which shows the details of the event, list all the itineraries and comments associated.
-- a user's dashboard showing events as an organizer & events as a participants.
+- a user's dashboard showing events as organizers & events as participants.
 - a most-popular-events page featuring detail statistics of all participants' responses
 
 # Associations

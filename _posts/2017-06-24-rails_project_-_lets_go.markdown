@@ -8,6 +8,7 @@ date:   2017-06-24 02:05:37 -0400
 Completing the portfolio project on rails marks a significant milestone on this journey of becoming a web developer.  As a fellow student mentioned, I no longer feel like a fake developer after completing this project.  
 
 **Planning**
+
 Summer is the season of gathering.  As friends plan out gathering events, I immediately clicked and wanted to build an app to organize events. 
 
 **Features**
@@ -49,6 +50,7 @@ With the end goals in sight, it was easy to draw the relationships between model
      - belongs to an event
 
 **The Look**
+
 Though the website obviously shows the developer behind it is an amateur, I actually spent 25% of time making it look reasonably eye-pleasing.  I utilized free css template found on this page:
 [Bootswatch](https://bootswatch.com/simplex/)
 I was obsessed with getting the buttons to fade out when a user clicks and responds and the little badge with number will update correctly, hours and hours on getting this feature to work.
@@ -65,12 +67,14 @@ changing the response to maybe
 ![](http://i.imgur.com/DJyRvqN.png)
 
 **Authentication**
+
 Third Party login took many hours. And I gave up on getting google login to work, Facebook login with devise was much easier with the help of this website:
 [www.adrianprieto.com](https://www.adrianprieto.com/how-to-setup-devise-and-omniauth-for-your-rails-application/)
 
 I struggled with invalid credential for 2 hours and finally determined that somehow the app wasn't passing the Facebook app id and client secret correctly during callback.  I verified the codes in console was stored properly in ENV variables, but somehow it was still not working. I took a shortcut of just storing the key and secret directly in the config file. This is definitely not recommended for real website.
 
 **Naming Convention**
+
 Many hours were spent on associations, but not because of complexities, rather the naming convention.  The join table was named as event_user (I should have just chosen one word in hindsight).  For the longest time, I wasn't able to get the association to work no matter what variations I have tried.  After hours of googling and reading lessons again and again, it finally clicked that instead of finding the right way to name the plurals of table with two words, I can just add class_name:
 
 ```
@@ -84,6 +88,7 @@ class Event < ApplicationRecord
 ```
 
 **Celebration**
+
 It's done and I am proud & sleep deprived.
 
 For your viewing pleasure: [https://github.com/hannah11361/io-let-us-go-rails-project](https://github.com/hannah11361/io-let-us-go-rails-project)

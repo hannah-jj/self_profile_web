@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Rails Project - with JQuery & JSON"
-date:   2017-07-15 15:50:03 +0000
+date:   2017-07-15 11:50:03 +0000
 ---
 
 

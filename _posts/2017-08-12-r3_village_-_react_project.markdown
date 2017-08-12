@@ -5,7 +5,7 @@ date:   2017-08-12 10:09:22 +0000
 ---
 
 
-It's been many months since I started at Flatiron.  One of my dreams was to gain the knowledge to create games for kids (without any ads). Through this final project, I have realized this dream! Though the games are not at all fancy, but it's a firsr step in a long journey.  Here is how it all came together:
+It's been many months since I started at Flatiron.  One of my dreams was to gain the knowledge to create games for kids (without any ads). Through this final project, I have realized this dream! Though the games are not at all fancy, but it's a first step in a long journey.  Here is how it all came together:
 
 **Goal**
 

@@ -43,8 +43,13 @@ No one can truly wins the game because pollution level increases anytime anyone 
 ```
     State is managed through Redux.
 		 
-    Containers read/write data to the database through dispatch actions passed in from the props.  Each action will fetch information from API server with various methods such as GET, POST & PATCH.  The response is captured by the reducers and passed back to the components as props.
+    Containers read/write data to the database through dispatch actions passed in from the props.
+    
+    Each action fetches information from API server with various methods such as GET, POST & PATCH.  
+    
+    The response is captured by the reducers and passed back to the components as props.
     ```
+    
 		 
 **Celebration**
 

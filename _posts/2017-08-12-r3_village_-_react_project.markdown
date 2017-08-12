@@ -41,7 +41,6 @@ No one can truly wins the game because pollution level increases anytime anyone 
 
 3. *The Middle - How React meets Rails*
      
-```
     State is managed through Redux.
 		 
     Containers read/write data to the database through dispatch actions passed in from the props.
@@ -50,7 +49,6 @@ No one can truly wins the game because pollution level increases anytime anyone 
     
     The response is captured by the reducers and passed back to the components as props.
     
-    ```
     
 		 
 **Celebration**

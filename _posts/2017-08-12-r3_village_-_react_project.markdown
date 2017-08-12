@@ -17,26 +17,31 @@ No one can truly wins the game because pollution level increases anytime anyone 
 
 1. *Back-End: Rails API*
 
+    ```
     User: has a room with 9 boxes where each box can store 1 or 0 toy
     Box: a box contains a toy. If the toy is recycled or trashed, box deactivated and won't show up in user's room.
     Toy: has a name & link to where picture is stored.
     Ingredients: various items such as plastic, electronic waste, trash, food trash to be used in recyle game.
+    ```
 		
 2. *Front-End: React*
 
-		 Routes: 
-		 User - index, show, new
-		 Games - 3 game route. one for each of the R action
-		 
-		 Containers - container for each of the six routes
-		 
-		 Components - presentational only, create as needed to support the display in containers
-		 
+	```
+    Routes: 
+	 User - index, show, new
+	 Games - 3 game route. one for each of the R action
+
+    Containers - container for each of the six routes
+
+    Components - presentational only, create as needed to support the display in containers
+```	 
 3. *The Middle - How React meets Rails*
      
-		 State is managed through Redux.
+```
+    State is managed through Redux.
 		 
-		 Containers read/write data to the database through dispatch actions passed in from the props.  Each action will fetch information from API server with various methods such as GET, POST & PATCH.  The response is captured by the reducers and passed back to the components as props.
+    Containers read/write data to the database through dispatch actions passed in from the props.  Each action will fetch information from API server with various methods such as GET, POST & PATCH.  The response is captured by the reducers and passed back to the components as props.
+    ```
 		 
 **Celebration**
 

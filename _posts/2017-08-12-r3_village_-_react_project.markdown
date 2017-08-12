@@ -19,9 +19,12 @@ No one can truly wins the game because pollution level increases anytime anyone 
 
     ```
     User: has a room with 9 boxes where each box can store 1 or 0 toy
-    Box: a box contains a toy. If the toy is recycled or trashed, box deactivated and won't show up in user's room.
-    Toy: has a name & link to where picture is stored.
-    Ingredients: various items such as plastic, electronic waste, trash, food trash to be used in recyle game.
+    
+    Box: a box contains a toy. If the toy is recycled or trashed, box deactivated and won't show up in user's room
+    
+    Toy: has a name & link to where picture is stored
+    
+    Ingredients: various items such as plastic, electronic waste, trash, food trash to be used in recyle game
     ```
 		
 2. *Front-End: React*

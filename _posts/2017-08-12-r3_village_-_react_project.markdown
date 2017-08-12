@@ -37,7 +37,8 @@ No one can truly wins the game because pollution level increases anytime anyone 
     Containers - container for each of the six routes
 
     Components - presentational only, create as needed to support the display in containers
-```	 
+	```	 
+
 3. *The Middle - How React meets Rails*
      
 ```
@@ -48,6 +49,7 @@ No one can truly wins the game because pollution level increases anytime anyone 
     Each action fetches information from API server with various methods such as GET, POST & PATCH.  
     
     The response is captured by the reducers and passed back to the components as props.
+    
     ```
     
 		 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "The Power of Bind method in Javascript"
-date:   2017-08-17 12:28:41 +0000
+date:   2017-08-17 8:28:41 +0000
 ---
 
 

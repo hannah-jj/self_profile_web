@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Creative - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="/css/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/main.css" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body>
+
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand page-scroll" href="/">Home</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="page-scroll" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+
+
+
+    <!-- Post Header -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div>
+                <h1>Rails Project - with JQuery & JSON</h1>
+                
+                <span class="meta">Posted by hannah11361 on July 15, 2017</span>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+				<p>It has been an amazing journey to see how websites are born and transformed into functional applications that can do almost anything. We are bound by our own imaginations, or how much time you are willing to spend googling!</p>
+
+<p><strong>planning</strong></p>
+
+<ul>
+  <li>
+    <p>render events index, show &amp; user show page with json backend</p>
+  </li>
+  <li>
+    <p>event show page contains buttons to advance to next event, load statistics (numbers of people going/not going/maybe going), load associated itineraries &amp; comments.</p>
+  </li>
+</ul>
+
+<p><strong>action</strong></p>
+
+<ul>
+  <li>customize Active Model Serializer for each model to fit the format desired for easier rendering</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>class UserSerializer &lt; ActiveModel::Serializer
+  attributes :id, :name, :email, :meetings, :events
+
+  #user organized meeting
+  def meetings
+  	object.meetings.map do |meeting|
+  		{id: meeting.id, attributes: {title: meeting.title}}
+  	end
+  end
+
+  #user particiating event
+  def events
+  	object.events.map do |event|
+  		{id: event.id, attributes: {title: event.title}}
+  	end
+  end
+end
+</code></pre>
+</div>
+
+<ul>
+  <li>tackle one view page at a time, but plan ahead since some pages can share the same template. For example: list of events on event index page and user show page utilize the same handlebar template</li>
+  <li>have fun with the ajax $.get and $.post</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>function loadItineraries(){
+	var event_id = parseInt($(".js-next").attr("data-id"));
+	$.get("/events/" + event_id +"/itineraries.json", function(data){ 
+		var itinerariesHTML = HandlebarsTemplates['itineraries']({itineraries : data["data"]});
+		$(".itineraries").html(itinerariesHTML);
+	});	
+}
+</code></pre>
+</div>
+
+<ul>
+  <li>have fun using Javascript Model Objects:
+    <div class="highlighter-rouge"><pre class="highlight"><code>//declare Comment object
+function Comment(id, event_id, email, comment){
+  this.id = id;
+  this.event = event_id;
+  this.comment = comment;
+  this.email = email;
+}
+// prototype function for Comment Object
+Comment.prototype.newComment = function() {
+  return (`&lt;tr class="info"&gt;
+          &lt;td&gt;${this.comment}&lt;/td&gt;
+          &lt;td&gt;${this.email}&lt;/td&gt;
+          &lt;td align="right"&gt;&lt;a class="btn-info" href="/events/${this.event_id}/comments/${this.id}"&gt;view&lt;/td&gt;&lt;/tr&gt;
+      `);
+}
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<p><strong>wrap up</strong></p>
+
+<p>breath and celebrate!</p>
+
+<p><strong>some random tips:</strong></p>
+
+<p><strong>pictures</strong></p>
+
+<p>A picture is worth a thousand words.</p>
+
+<p><img src="http://i.imgur.com/ID9yl2T.gif" alt="pictures" /></p>
+
+<p>Place picture for rails application under :
+<code class="highlighter-rouge">#app/assets/images</code></p>
+
+<p>use /assets/leave.jpg as url since rails knows images are contained in the images folder.</p>
+
+<p><a href="https://blog.snappa.com/free-stock-photos/">List of websites with free beautiful stock photos </a></p>
+
+<p><a href="http://gifmaker.me/">make moving photos (gif) on this site</a></p>
+
+<p><strong>handlebars template in rails</strong></p>
+
+<p>An example walk-thru is worth a hundred google searches:</p>
+
+<p><a href="https://blog.botreetechnologies.com/using-handlebars-js-with-ruby-on-rails-bcddce004947">a great site walked through stey by step how to incorporate handlebars template in rails</a></p>
+
+<p><strong>ready to load</strong></p>
+
+<p>Buttons were not responding when clicked if the page is redirected from other pages, instead of using the ready function, use below instead:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$(document).on('turbolinks:load', function(){
+
+  	// any javascripts
+
+});
+</code></pre>
+</div>
+
+
+                <hr>
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2017/06/24/rails_project_-_lets_go.html" data-toggle="tooltip" data-placement="top" title="Rails Project : Let's Go">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/08/12/r3_village_-_react_project.html" data-toggle="tooltip" data-placement="top" title="R3 Village - React Project">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">Action!</h2>
+                <hr class="primary">
+                <p></p>
+            </div>
+        <div class="col-lg-2 col-lg-offset-2 text-center">
+            <a href="https://www.linkedin.com/in/hannah-hui-jiang">
+                <i class="fa fa-linkedin fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+            </a>
+        </div>
+        <div class="col-lg-2 col-lg-offset-1 text-center">
+            <a href="mailto:hui1021@gmail.com">
+            <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+            </a>
+        </div>
+        <div class="col-lg-2 col-lg-offset-1 text-center">
+            <a href="https://github.com/hannah11361">
+            <i class="fa fa-github fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+</body>
+
+</html>

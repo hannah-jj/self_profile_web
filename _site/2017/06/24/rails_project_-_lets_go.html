@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Creative - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="/css/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/main.css" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body>
+
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand page-scroll" href="/">Home</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="page-scroll" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+
+
+
+    <!-- Post Header -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div>
+                <h1>Rails Project : Let's Go</h1>
+                
+                <span class="meta">Posted by hannah11361 on June 24, 2017</span>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+				<p>Completing the portfolio project on rails marks a significant milestone on this journey of becoming a web developer.  As a fellow student mentioned, I no longer feel like a fake developer after completing this project.</p>
+
+<p><strong>Planning</strong></p>
+
+<p>Summer is the season of gathering.  As friends plan out gathering events, I immediately clicked and wanted to build an app to organize events.</p>
+
+<p><strong>Features</strong></p>
+
+<ul>
+  <li>Users can organize events, add itineraries to the events, exchange comments and note their participation of “yes, maybe, no”.</li>
+  <li>Guest has the luxury of browsing all events.</li>
+  <li>There is a special feature that will displace events ranked by participations.  The most popular ones are the defined by the most “yes”.</li>
+</ul>
+
+<p>Those sounded like fairly easy tasks with such limited features, but the models and controllers were already getting very complicated.  This really make me appreciate more on all the beautiful websites out there having much more complexities.</p>
+
+<p><strong>View</strong></p>
+
+<p>Once the main features are decided, I drew the views and layouts of each pages.  The main actions are:</p>
+<ul>
+  <li>an event’s show page which shows the details of the event, list all the itineraries and comments associated.</li>
+  <li>a user’s dashboard showing events as organizers &amp; events as participants.</li>
+  <li>a most-popular-events page featuring detail statistics of all participants’ responses</li>
+</ul>
+
+<p><strong>Associations</strong></p>
+
+<p>With the end goals in sight, it was easy to draw the relationships between models and map out the associations:</p>
+
+<ul>
+  <li>event
+    <ul>
+      <li>belongs to an organizer (user)</li>
+      <li>has many participants (users) through the relationships with event_users, a join table recording an event, a participant &amp; a participant’s response (yes, maybe, no)</li>
+      <li>has many comments</li>
+      <li>has many itineraries</li>
+    </ul>
+  </li>
+  <li>user
+    <ul>
+      <li>has many meetings (as an organizer)</li>
+      <li>has many itineraries through meetings as an organizer</li>
+      <li>has many events (as a participant)</li>
+      <li>has many comments</li>
+    </ul>
+  </li>
+  <li>comment
+    <ul>
+      <li>belongs to an event</li>
+      <li>belongs to a user</li>
+    </ul>
+  </li>
+  <li>itinerary
+    <ul>
+      <li>belongs to an event</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>The Look</strong></p>
+
+<p>Though the website obviously shows the developer behind it is an amateur, I actually spent 25% of time making it look reasonably eye-pleasing.  I utilized free css template found on this page:
+<a href="https://bootswatch.com/simplex/">Bootswatch</a>
+I was obsessed with getting the buttons to fade out when a user clicks and responds and the little badge with number will update correctly, hours and hours on getting this feature to work.</p>
+
+<p>here is how it looks before a user responds to an event:
+<img src="http://i.imgur.com/g2QzDhG.png" alt="" /></p>
+
+<p>after clicking yes</p>
+
+<p><img src="http://i.imgur.com/73r1CjX.png" alt="" /></p>
+
+<p>changing the response to maybe</p>
+
+<p><img src="http://i.imgur.com/DJyRvqN.png" alt="" /></p>
+
+<p><strong>Authentication</strong></p>
+
+<p>Third Party login took many hours. And I gave up on getting google login to work, Facebook login with devise was much easier with the help of this website:
+<a href="https://www.adrianprieto.com/how-to-setup-devise-and-omniauth-for-your-rails-application/">www.adrianprieto.com</a></p>
+
+<p>I struggled with invalid credential for 2 hours and finally determined that somehow the app wasn’t passing the Facebook app id and client secret correctly during callback.  I verified the codes in console was stored properly in ENV variables, but somehow it was still not working. I took a shortcut of just storing the key and secret directly in the config file. This is definitely not recommended for real website.</p>
+
+<p><strong>Naming Convention</strong></p>
+
+<p>Many hours were spent on associations, but not because of complexities, rather the naming convention.  The join table was named as event_user (I should have just chosen one word in hindsight).  For the longest time, I wasn’t able to get the association to work no matter what variations I have tried.  After hours of googling and reading lessons again and again, it finally clicked that instead of finding the right way to name the plurals of table with two words, I can just add class_name:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>class Event &lt; ApplicationRecord
+  
+  belongs_to :organizer, :class_name =&gt; "User"
+  
+  has_many :event_users, class_name: "Event_User"
+  has_many :participants, through: :event_users
+	
+</code></pre>
+</div>
+
+<p><strong>Celebration</strong></p>
+
+<p>It’s done and I am proud &amp; sleep deprived.</p>
+
+<p>For your viewing pleasure: <a href="https://github.com/hannah11361/io-let-us-go-rails-project">https://github.com/hannah11361/io-let-us-go-rails-project</a></p>
+
+
+
+                <hr>
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2017/03/29/save_the_developer_save_the_world.html" data-toggle="tooltip" data-placement="top" title="Save the developer, save the world?">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/07/15/rails_project_-_with_jquery_and_json.html" data-toggle="tooltip" data-placement="top" title="Rails Project - with JQuery & JSON">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">Action!</h2>
+                <hr class="primary">
+                <p></p>
+            </div>
+        <div class="col-lg-2 col-lg-offset-2 text-center">
+            <a href="https://www.linkedin.com/in/hannah-hui-jiang">
+                <i class="fa fa-linkedin fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+            </a>
+        </div>
+        <div class="col-lg-2 col-lg-offset-1 text-center">
+            <a href="mailto:hui1021@gmail.com">
+            <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+            </a>
+        </div>
+        <div class="col-lg-2 col-lg-offset-1 text-center">
+            <a href="https://github.com/hannah11361">
+            <i class="fa fa-github fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+</body>
+
+</html>

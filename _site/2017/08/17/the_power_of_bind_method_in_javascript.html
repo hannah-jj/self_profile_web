@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Creative - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="/css/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/main.css" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body>
+
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand page-scroll" href="/">Home</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="page-scroll" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+
+
+
+    <!-- Post Header -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div>
+                <h1>The Power of Bind method in Javascript</h1>
+                
+                <span class="meta">Posted by hannah11361 on August 17, 2017</span>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+				<p>During the course of coding the final project using React framework, I found myself using ‘bind’ quite a few times. Wherever I have click/hover actions, I would subconsciously/automatically write something along the line of:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>this.handleClickCallback = this.handleClickCallback.bind(this);
+
+</code></pre>
+</div>
+
+<p>When instructor asked me why did I used bind, my mind went into panick mode and I utterred something like: so when user clicks on the button and this function will be used later??? If it’s not bound, then the button doesn’t work???  All the question marks are not for dramatic effect, I have been using the method though my understanding was only skin deep… Here is a refresher on bind() in the context of React &amp; ES6.</p>
+
+<p><strong>what is this???</strong></p>
+
+<p>‘this’ is a powerful word in Javascript. Everything in Javascript is an object including a function.</p>
+
+<blockquote>
+  <p>The value of this, when used in a function, is the object that “owns” the function. <a href="https://www.w3schools.com/js/js_function_invocation.asp">source</a></p>
+
+</blockquote>
+
+<p><strong>bound to ‘this’</strong></p>
+
+<p>‘this’ could refer to different objects as the scopes change.</p>
+
+<blockquote>
+  <p>The simplest use of bind() is to make a function that, no matter how it is called, is called with a particular this value. [source]https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind)</p>
+
+</blockquote>
+
+<p><strong>something borrowed</strong></p>
+
+<p>In the context of React written in ES6 syntax, when the component is instantiated from the React library, ‘this’ is referred to the component itself and the event handler method is usually declared inside the classs.  The buttons, links or other non-React sources are the objects being clicked on, hovered over, etc.   Since class methods are not bound automatically, to get access to the states &amp; props, we have to bind this.handleClickCallback and pass it to onClick explicitly, otherwise ‘this’ will be undefined.</p>
+
+<p>It is recommended to do the binding in constructor where it will be called once:</p>
+
+<p><code class="highlighter-rouge">
+  constructor() {
+    super()
+    this.handleClick = this.handleClickCallback.bind(this)  
+  }
+	</code></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Rather than in render() where it gets called every time the component re-renders:
+```
+  render() {
+return &lt;button onClick={this.handleClickCallback.bind(this)}&gt;Click me!&lt;/button&gt;   }
+```
+</code></pre>
+</div>
+
+<p><a href="https://facebook.github.io/react/docs/handling-events.html">source 1</a>
+<a href="http://reactkungfu.com/2015/07/why-and-how-to-bind-methods-in-your-react-component-classes/">source 2</a></p>
+
+<p>The above explanation is still only skin deep because skin has multiple layers. Learning continues…</p>
+
+
+
+                <hr>
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2017/08/12/r3_village_-_react_project.html" data-toggle="tooltip" data-placement="top" title="R3 Village - React Project">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">Action!</h2>
+                <hr class="primary">
+                <p></p>
+            </div>
+        <div class="col-lg-2 col-lg-offset-2 text-center">
+            <a href="https://www.linkedin.com/in/hannah-hui-jiang">
+                <i class="fa fa-linkedin fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+            </a>
+        </div>
+        <div class="col-lg-2 col-lg-offset-1 text-center">
+            <a href="mailto:hui1021@gmail.com">
+            <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+            </a>
+        </div>
+        <div class="col-lg-2 col-lg-offset-1 text-center">
+            <a href="https://github.com/hannah11361">
+            <i class="fa fa-github fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+</body>
+
+</html>

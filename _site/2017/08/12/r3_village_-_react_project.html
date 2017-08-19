@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Creative - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="/css/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/main.css" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body>
+
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand page-scroll" href="/">Home</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="page-scroll" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+
+
+
+    <!-- Post Header -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div>
+                <h1>R3 Village - React Project</h1>
+                
+                <span class="meta">Posted by hannah11361 on August 12, 2017</span>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+				<p>It’s been many months since I started at Flatiron.  One of my dreams was to gain the knowledge to create games for kids (without any ads). Through this final project, I have realized this dream! Though the games are not at all fancy, but it’s a first step in a long journey.  Here is how it all came together:</p>
+
+<p><strong>Goal</strong></p>
+
+<p>To teach kids about Reduce, Reuse &amp; Recycle (R3) through games and learnings.  R3 Village is a virtual village where each villager have the options of getting new toy, replaying with old toy, recycling toy, trashing toy or learning thrugh a game without any toy.   Each action increases the pollution of the village and/or the happiness level of the villager.  Once the pollution level of the village reaches a certain level, background will go to total black.</p>
+
+<p>No one can truly wins the game because pollution level increases anytime anyone get a new toy. Villagers can only survive in the long term if everyone takes part in R3 - Reduce, Reuse &amp; Recycle. Rich or poor, when the home is destroyed, everyone is doomed.</p>
+
+<p><strong>Plan &amp; Action</strong></p>
+
+<ol>
+  <li>
+    <p><em>Back-End: Rails API</em></p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> User: has a room with 9 boxes where each box can store 1 or 0 toy
+    
+ Box: a box contains a toy. If the toy is recycled or trashed, box deactivated and won't show up in user's room
+    
+ Toy: has a name &amp; link to where picture is stored
+    
+ Ingredients: various items such as plastic, electronic waste, trash, food trash to be used in recyle game
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p><em>Front-End: React</em></p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> Routes: 
+  User - index, show, new
+  Games - 3 game route. one for each of the R action
+
+ Containers - container for each of the six routes
+
+ Components - presentational only, create as needed to support the display in containers
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p><em>The Middle - How React meets Rails</em></p>
+
+    <p>State is managed through Redux.</p>
+
+    <p>Containers read/write data to the database through dispatch actions passed in from the props.</p>
+
+    <p>Each action fetches information from API server with various methods such as GET, POST &amp; PATCH.</p>
+
+    <p>The response is captured by the reducers and passed back to the components as props.</p>
+  </li>
+</ol>
+
+<p><strong>Celebration</strong></p>
+
+<p>Catch up on sleep :</p>
+
+<p><img src="https://media.giphy.com/media/l3M7smiKhkOcw/giphy.gif" alt="sleep" /></p>
+
+<p><strong>Future Plan</strong></p>
+
+<ol>
+  <li>add better than primitive css</li>
+  <li>add more games</li>
+  <li>navigation</li>
+</ol>
+
+<p>for now here is the link to the project - <a href="https://github.com/hannah11361/R3-Village">https://github.com/hannah11361/R3-Village</a></p>
+
+<p>In case you haven’t noticed, R3 also stands for Rails, React &amp; Redux:</p>
+
+<p><img src="https://media.giphy.com/media/3oEduJnper1UdNqreg/giphy.gif" alt="Thank you!" /></p>
+
+
+
+                <hr>
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2017/07/15/rails_project_-_with_jquery_and_json.html" data-toggle="tooltip" data-placement="top" title="Rails Project - with JQuery & JSON">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/08/17/the_power_of_bind_method_in_javascript.html" data-toggle="tooltip" data-placement="top" title="The Power of Bind method in Javascript">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">Action!</h2>
+                <hr class="primary">
+                <p></p>
+            </div>
+        <div class="col-lg-2 col-lg-offset-2 text-center">
+            <a href="https://www.linkedin.com/in/hannah-hui-jiang">
+                <i class="fa fa-linkedin fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+            </a>
+        </div>
+        <div class="col-lg-2 col-lg-offset-1 text-center">
+            <a href="mailto:hui1021@gmail.com">
+            <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+            </a>
+        </div>
+        <div class="col-lg-2 col-lg-offset-1 text-center">
+            <a href="https://github.com/hannah11361">
+            <i class="fa fa-github fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+</body>
+
+</html>

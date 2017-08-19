@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Creative - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="/css/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/main.css" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body>
+
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand page-scroll" href="/">Home</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="page-scroll" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+
+
+
+    <!-- Post Header -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div>
+                <h1>Make Me As Tall as My Siblings!</h1>
+                
+                <span class="meta">Posted by hannah11361 on February 8, 2017</span>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+				<p>Surfing the web is no longer the same after I have gone through the HTML and CSS portion of the program!  <!--more-->I often resize the browser on desktop computer just to see how/if the pages are responsive to changes. And whenever I browse pages that are not built for optimal view on mobile device, I would think about how it can be done.  It was really amazing to see how CSS can control the styles of a website.</p>
+
+<p>While I was coding-along in the “Adding Responsive Feature” lab, I couldn’t help but to notice that the below scene doesn’t look right:</p>
+
+<p><img src="http://i.imgur.com/UjrjfmS.png" alt="" /></p>
+
+<p>The two columns (siblings) don’t have the same height! I couldn’t get pass that, so I fired up google searching for ways to make the columns the same height!  It turns out that the height issues are very common when the contents of the siblings are not exactly the same.</p>
+
+<p>I found many posts, a lot of suggesting using Javasript to get the height of the tallest sibling and set the others with the same height.  Those solutions are still beyond me since I am still a newbie. So I tried other ones that are easier to understand and doable for me.  One of them suggested using table display:</p>
+
+<p><img src="http://i.imgur.com/OF8kMMW.png" alt="" /></p>
+
+<p>I tried it, and no matter how I constructed the &lt;div&gt; and CSS file, the two siblings won’t display with same height. Arg!!! I struggled a while and decided to move on.  I concluded that due to the contents were floating, this method doesn’t work.</p>
+
+<p>Another post suggested a “cheap fix” with CSS file: making the padding-bottom for the siblings as many px as possible, and compensate with the same negative px on margin-bottom, then make the overflow on the parent container to be hidden.</p>
+
+<p>CSS File:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>.row-2 {
+  overflow: hidden;
+}
+.cell-1, .cell-2 {
+
+  padding: 30px;
+  padding-bottom: 99999px;
+  margin-bottom: -99999px;
+  background: white;
+}
+
+</code></pre>
+</div>
+
+<p>Setup in HTML side should include the two siblings in the same &lt;div&gt; with class “row-2”, and each sibling’s container would have class of “cell-1” and “cell-2” respectively. And it worked!!!</p>
+
+<p><img src="http://i.imgur.com/2XdH211.png" alt="" /></p>
+
+<p>Now there is still something that was bothering me: the gap between this row and the next row has disappearred!  This time I thought of something quick myself: putting in a placeholder &lt;div&gt; section with no content:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>.temp{
+    padding: 0px;
+  margin-bottom: 20px;
+}
+</code></pre>
+</div>
+
+<p>And hooray!</p>
+
+<p><img src="http://i.imgur.com/0PsqQLX.png" alt="" /></p>
+
+<p>It was probably a cheap fix for now before I learn more bulletproof way of fixing, but I still feel accomplished nonetheless.</p>
+
+<p>Now, if there is a way to make me as tall as my sibling with a click of button, that’ll be fantastic!</p>
+
+
+                <hr>
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2017/02/02/an_unexpected_journey.html" data-toggle="tooltip" data-placement="top" title="An Unexpected Journey">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/02/20/first_gem_and_k_i_s_s.html" data-toggle="tooltip" data-placement="top" title="First Gem and K.I.S.S">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">Action!</h2>
+                <hr class="primary">
+                <p></p>
+            </div>
+        <div class="col-lg-2 col-lg-offset-2 text-center">
+            <a href="https://www.linkedin.com/in/hannah-hui-jiang">
+                <i class="fa fa-linkedin fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+            </a>
+        </div>
+        <div class="col-lg-2 col-lg-offset-1 text-center">
+            <a href="mailto:hui1021@gmail.com">
+            <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+            </a>
+        </div>
+        <div class="col-lg-2 col-lg-offset-1 text-center">
+            <a href="https://github.com/hannah11361">
+            <i class="fa fa-github fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+</body>
+
+</html>

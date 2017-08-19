@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Creative - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="/css/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/main.css" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body>
+
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand page-scroll" href="/">Home</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="page-scroll" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+
+
+
+    <!-- Post Header -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div>
+                <h1>0 star rating</h1>
+                
+                <span class="meta">Posted by hannah11361 on March 22, 2017</span>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+				<p>For starters, I am too nice to give anything 0 star rating, but I’ve always wonder why website can’t let user give 0 star?  <!--more-->It comes handy if there is something that truly deserves a 0 star.  For my sinatra project, I’ve build an app that let user rate movies.  Yes, rating movies are all over the web, from imdb, to netflix, to amazon, to everywhere movie is mentioned, but I haven’t found one that allows 0 star!!! Developers certainly are kind-hearted.</p>
+
+<p><strong>Gems:</strong></p>
+
+<p>The app requires the usage of several skills which we learn throughout the courses leading up to the project: ActiveRecord, Sinatra, Rake to name a few. (Ironically, I’ve searched the web for a couple hours on how to clean up a database and reset the primary ID to start from 1… and I have just noticed in the Gemfile as I am typing this blog, there is a gem called “database_cleaner”. ) .  Nonetheless below is the fruits of my hours of research:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Movie.destroy_all
+ActiveRecord::Base.connection.execute("delete from sqlite_sequence where name = 'movies'")
+</code></pre>
+</div>
+
+<p>Substitute Movie for your model and movies for your table.</p>
+
+<p><strong>Database</strong></p>
+
+<p>three tables: users, movies and ratings
+relationship: a user has many ratings, a movie has many ratings, only one rating per movie per user allowed.</p>
+
+<p><strong>Web Scraping For Fun</strong></p>
+
+<p>I’ve utilized web scraping skills to conveniently scrape some movie information from www.imdb.com to populate the movie table.  I’ve noticed that all of imdb.com’s page that contains list of movies follow the exact same structure (as expected), so I can now scrape any imdb page that consists of list of movies, just by changing the link in the method.  Check out <a href="https://github.com/hannah11361/sinatra-app-wikimovia">the movie.rb and seeds.rb</a> for details.</p>
+
+<p><strong>Pink and Purple Rule the World</strong></p>
+
+<p>BTW I’ve rated Beauty and the Beast 5/5 as shown below. It is so good that my friends went to see it twice with 3D.</p>
+
+<p><img src="http://i.imgur.com/gt3AeVo.png" alt="Wikimovia Screenshot" /></p>
+
+
+                <hr>
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2017/02/20/first_gem_and_k_i_s_s.html" data-toggle="tooltip" data-placement="top" title="First Gem and K.I.S.S">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/03/29/save_the_developer_save_the_world.html" data-toggle="tooltip" data-placement="top" title="Save the developer, save the world?">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">Action!</h2>
+                <hr class="primary">
+                <p></p>
+            </div>
+        <div class="col-lg-2 col-lg-offset-2 text-center">
+            <a href="https://www.linkedin.com/in/hannah-hui-jiang">
+                <i class="fa fa-linkedin fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+            </a>
+        </div>
+        <div class="col-lg-2 col-lg-offset-1 text-center">
+            <a href="mailto:hui1021@gmail.com">
+            <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+            </a>
+        </div>
+        <div class="col-lg-2 col-lg-offset-1 text-center">
+            <a href="https://github.com/hannah11361">
+            <i class="fa fa-github fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+</body>
+
+</html>

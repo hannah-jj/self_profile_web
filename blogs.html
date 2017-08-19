@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+{% for post in site.posts %}
+<div class="container">
+        <div class="row">
+            <div class="text-center">
+                <div class="post-preview">
+                    <a href="{{ post.url | prepend: site.baseurl }}">
+                        <h2 class="post-title">            {{ post.title }}
+                        </h2>
+                        {% if post.subtitle %}
+                        <h3 class="post-subtitle">
+                            {{ post.subtitle }}
+                        </h3>
+                        {% endif %}
+                    </a>
+                    {{ post.excerpt }}
+                    <p class="post-meta">Posted by {% if site.author %}{{ site.author }}{% else %}{{ site.github_username }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}</p>
+                </div>
+            </div>
+        </div>
+</div>
+<hr>
+{% endfor %}
